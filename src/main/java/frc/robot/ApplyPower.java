@@ -7,6 +7,7 @@ public class ApplyPower {
     private static final int k_iArchade = 1;
     private static final int k_iMecannum = 2;
     private static final int k_iZDrive = 3;
+    
     public static final int k_iLeftFrontDrive = 1;
     public static final int k_iRightFrontDrive = 2;
     public static final int k_iLeftRearDrive = 3;
