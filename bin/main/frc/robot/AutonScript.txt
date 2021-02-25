@@ -1,0 +1,72 @@
+auton 1  test turning
+    step 1		Move straight
+        Bearing   0     gyro on 0 for 120000
+        distance  120000  tttt  
+        Power       1.0 tttt 
+
+    step 2		Wait for .5
+	settle  .5 settle
+
+    step 3		gyro on 0 reverse for same
+        Bearing   0     keep on 90 degrees left
+        distance  120000  tttt  
+        Power       -1.0 tttt 
+
+
+auton 2	test turning and driving
+
+    step 1 
+        Turnto      -90     Turn to 90 degrees left
+
+    step 2
+        Bearing     -90     keep on 90 degrees left
+        distance    15000   
+        Power        .75  
+	
+    step 3
+	    settle  .50   
+
+    step 4 
+        Bearing  -90     keeep at 90
+        distance    15000  tttt  
+        Power      -.75 tttt 
+
+    step 5
+	    settle  .50     stop for .5 sec
+
+    step 6 
+        Turnto  0     Turn to score area
+
+
+auton 3   ***** test of disabled script
+    step 1
+        bearing    0 		straight ahead
+        distance 15000    	 
+        power     .4         	low power  
+
+    step 2
+        settle    .5  		stop 12 second
+
+    step 3
+        bearing    0 		straight ahead
+        distance 15000     	drive forward 
+        power     -.4        	low power  
+
+    step 4
+        settle   .5  stop
+
+
+auton 4 test shooting
+    step 1 
+        Turnto  90     Turn to 90 degrees right
+
+    step 2
+        bearing    90 	  stay on 90
+        distance 15000    drive certain encoder distance 
+        power     .4      lower power  
+
+    step 3
+        target 0	press the targetting button 0=close targets 
+
+    step 4
+        shoot   0  	press the shoot button  0 required but ignored

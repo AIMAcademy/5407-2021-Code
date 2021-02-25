@@ -1,0 +1,282 @@
+<xml version="1.0">
+<dashboard>
+	<widget field="Sh Camera Y Adjust final" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="717" y="555"/>
+	</widget>
+	<widget field="Sh Camera Y Adjust init" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="722" y="520"/>
+	</widget>
+	<widget field="Sh Camera OSet Min" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="745" y="362"/>
+	</widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.CameraServerViewer">
+		<location x="1107" y="15"/>
+		<width>456</width>
+		<height>327</height>
+		<property name="Camera Choice" value=""/>
+	</static-widget>
+	<widget field="In End Game" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="780" y="16"/>
+	</widget>
+	<widget field="RB Bearing dDiff" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="185" y="525"/>
+	</widget>
+	<widget field="Sh CL Status" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="185" y="504"/>
+	</widget>
+	<widget field="Sh EPC Lifter" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="185" y="483"/>
+	</widget>
+	<widget field="I_ShooterPower" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="185" y="462"/>
+	</widget>
+	<widget field="LL dYCoord" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="791" y="134"/>
+	</widget>
+	<widget field="Sh Hood Status" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="185" y="420"/>
+	</widget>
+	<widget field="Sh Camera Status" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="760" y="311"/>
+	</widget>
+	<widget field="I_DriverPower" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="185" y="378"/>
+	</widget>
+	<widget field="LL Base X Locked" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="762" y="231"/>
+	</widget>
+	<widget field="G Moving" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="185" y="336"/>
+	</widget>
+	<widget field="Sh Hood Pos" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="185" y="315"/>
+	</widget>
+	<widget field="RB Gyro Rel Bear" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="185" y="294"/>
+	</widget>
+	<widget field="limelight_Stream" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="185" y="273"/>
+	</widget>
+	<widget field="G NAVX Angle" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="191" y="252"/>
+	</widget>
+	<widget field="RB Gyro On Bearing" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="324" y="0"/>
+	</widget>
+	<widget field="I Far Targets" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="784" y="92"/>
+	</widget>
+	<widget field="Auto Selector" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="185" y="210"/>
+	</widget>
+	<widget field="RB Enc Posit" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="185" y="189"/>
+	</widget>
+	<widget field="RB Req Bearing" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="185" y="168"/>
+	</widget>
+	<widget field="RB Enco Dist" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="207" y="147"/>
+	</widget>
+	<widget field="I Req Veloc" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="194" y="126"/>
+	</widget>
+	<widget field="SA I Step Number" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="191" y="105"/>
+	</widget>
+	<widget field="G Bearing" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="213" y="84"/>
+	</widget>
+	<widget field="I Slow Carousel" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="762" y="467"/>
+	</widget>
+	<widget field="I Close Targets" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="773" y="63"/>
+	</widget>
+	<widget field="SA I Auton Comp" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="185" y="21"/>
+	</widget>
+	<widget field="LL dArea" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="800" y="191"/>
+	</widget>
+	<widget field="Sh Up To Speed" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="798"/>
+	</widget>
+	<widget field="RB >>>Motors" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="777"/>
+	</widget>
+	<widget field="I Hood Req Pow" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="756"/>
+	</widget>
+	<widget field="RB Tea State" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="735"/>
+	</widget>
+	<widget field="I Hood Req Pos" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="714"/>
+	</widget>
+	<widget field="I Gyro Req Bear" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="693"/>
+	</widget>
+	<widget field="RB Enco Desired Distance" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="672"/>
+	</widget>
+	<widget field="I Sh Intake" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="780" y="389"/>
+	</widget>
+	<widget field="I Sh Launch" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="630"/>
+	</widget>
+	<widget field="SA I Next Step" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="609"/>
+	</widget>
+	<widget field="SA I Step Timer" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="588"/>
+	</widget>
+	<widget field="Sh CL Req Pct" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="567"/>
+	</widget>
+	<widget field="Sh CL PID P" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="546"/>
+	</widget>
+	<widget field="Sh CL Sen Vel" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="525"/>
+	</widget>
+	<widget field="I Fast Carousel" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="760" y="436"/>
+	</widget>
+	<widget field="Sh CL Error" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="483"/>
+	</widget>
+	<widget field="Sh Camera Power" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="760" y="341"/>
+	</widget>
+	<widget field="I In End Game" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="441"/>
+	</widget>
+	<widget field="Sh CL PID I" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="420"/>
+	</widget>
+	<widget field="Sh CL PID F" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="399"/>
+	</widget>
+	<widget field="Sh CL PID D" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="378"/>
+	</widget>
+	<widget field="I_TestValue" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="357"/>
+	</widget>
+	<widget field="Sh iDiff" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="336"/>
+	</widget>
+	<widget field="RB Intake Speed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="315"/>
+	</widget>
+	<widget field="I_DriverTurn" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="294"/>
+	</widget>
+	<widget field="RB Enco Save Pos" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="273"/>
+	</widget>
+	<widget field="limelight_Interface" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="252"/>
+	</widget>
+	<widget field="RB <<<Motors" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="231"/>
+	</widget>
+	<widget field="I Req Camear Pos" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="529" y="283"/>
+	</widget>
+	<widget field="RB Enco Pos" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="189"/>
+	</widget>
+	<widget field="LL dXCoord" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="791" y="158"/>
+	</widget>
+	<widget field="Dev Stop Drive Wheels" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="147"/>
+	</widget>
+	<widget field="Sh Hood Calc Power" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="126"/>
+	</widget>
+	<widget field="IN Camera Req Pos" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="753" y="278"/>
+	</widget>
+	<widget field="limelight_PipelineName" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="84"/>
+	</widget>
+	<widget field="Sh Ball In Place" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="63"/>
+	</widget>
+	<widget field="Dev Stop Compressor" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="42"/>
+	</widget>
+	<widget field="LL Sees Target" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="774" y="254"/>
+	</widget>
+	<widget field="RB Comp CL State" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="0"/>
+	</widget>
+</dashboard>
+<live-window>
+	<widget field="Ungrouped" type="LW Subsystem" class="edu.wpi.first.smartdashboard.livewindow.elements.LWSubsystem">
+		<widget field="Compressor[0]" type="Compressor" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalOutputController">
+			<location x="86" y="16"/>
+			<height>23</height>
+			<width>136</width>
+		</widget>
+		<widget field="Spark[5]" type="Speed Controller" class="edu.wpi.first.smartdashboard.livewindow.elements.SpeedController">
+			<location x="6" y="39"/>
+			<height>45</height>
+			<width>297</width>
+		</widget>
+		<widget field="Solenoid[0,1]" type="Solenoid" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalOutputController">
+			<location x="93" y="84"/>
+			<height>23</height>
+			<width>123</width>
+		</widget>
+		<widget field="AnalogInput[0]" type="Analog Input" class="edu.wpi.first.smartdashboard.livewindow.elements.SingleNumberDisplay">
+			<location x="6" y="107"/>
+			<height>20</height>
+			<width>297</width>
+		</widget>
+		<widget field="Spark[2]" type="Speed Controller" class="edu.wpi.first.smartdashboard.livewindow.elements.SpeedController">
+			<location x="6" y="127"/>
+			<height>45</height>
+			<width>297</width>
+		</widget>
+		<widget field="DigitalInput[7]" type="Digital Input" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalInputDisplay">
+			<location x="6" y="172"/>
+			<height>20</height>
+			<width>297</width>
+		</widget>
+		<widget field="Solenoid[0,2]" type="Solenoid" class="edu.wpi.first.smartdashboard.livewindow.elements.DigitalOutputController">
+			<location x="93" y="192"/>
+			<height>23</height>
+			<width>123</width>
+		</widget>
+		<widget field="Spark[1]" type="Speed Controller" class="edu.wpi.first.smartdashboard.livewindow.elements.SpeedController">
+			<location x="6" y="215"/>
+			<height>45</height>
+			<width>297</width>
+		</widget>
+		<widget field="Spark[0]" type="Speed Controller" class="edu.wpi.first.smartdashboard.livewindow.elements.SpeedController">
+			<location x="6" y="260"/>
+			<height>45</height>
+			<width>297</width>
+		</widget>
+		<widget field="Servo[3]" type="Servo" class="edu.wpi.first.smartdashboard.livewindow.elements.ServoController">
+			<location x="6" y="305"/>
+			<height>45</height>
+			<width>297</width>
+		</widget>
+		<widget field="navX-Sensor" type="Gyro" class="edu.wpi.first.smartdashboard.gui.elements.Compass">
+			<location x="6" y="350"/>
+			<height>150</height>
+			<width>297</width>
+		</widget>
+		<location x="11" y="30"/>
+		<width>309</width>
+		<height>506</height>
+	</widget>
+</live-window>
+</xml>
