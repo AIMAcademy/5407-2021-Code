@@ -248,12 +248,6 @@ public class RobotBase {
 			applyPower.saveEncoderLocation(k_sBaseMotorEncoderKey, dEncoderPosition);
 		}
 
-		if (inputs.dDanielsMouthPower >= 0) {
-			inputs.dDanielsMouthPower = inputs.dDanielsMouthPower - 0.002;
-		} else if (inputs.dDanielsMouthPower <= 1) {
-			danielsMouth.set(inputs.dDanielsMouthPower);
-		}
-
 		dEncoderDistance = applyPower.getEncoderDistance(k_sBaseMotorEncoderKey, dEncoderPosition);
 
 

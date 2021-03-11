@@ -26,6 +26,7 @@ class RobotMap {
 
     // Pneumatic Control Module Ids
     public final static int kPCMPort_DriveShifter = 0;
+    public final static int kPCMPort_Arming = 1;
     public final static int kPCMPort_Teainator = 2;
     public final static int kPCMPort_BallPusherUpper = 4;
 

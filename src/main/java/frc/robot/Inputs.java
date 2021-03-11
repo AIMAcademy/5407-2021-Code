@@ -22,7 +22,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Inputs {
 
-	// declare you variable up here
+	Config config = new Config("/home/lvuser","WPConfig_2020.cfg");	// declare you variable up here
 	private XboxController gamepadOperator = null;
 	private XboxController gamepadDriver = null;
 	public Joystick joyTestController = null;
@@ -46,8 +46,9 @@ public class Inputs {
 	public double dTestValue = 0.0;
 	public double dRequestedVelocity = 0.0;
 	public double dRequestedCarouselPower = 0.0;		//set this power anywhere to spin carousel
-	public boolean bFastCarousel = false;				// fast used for close targets
-	public boolean bSlowCarousel = true;				// Slow used for far targets. 
+	public boolean bSpeed = false;	//True == fast - False == slow
+	public double dFastSpeed;
+	public double dSlowSpeed;
 	
 	public boolean bShooterLaunch = false;
 	public boolean bTargetting = false;
@@ -92,7 +93,8 @@ public class Inputs {
 
 	// class Constructor initialize your variables here
     public Inputs() {
-		
+		dFastSpeed = config.getDouble("shooter.dFastCarouselPower", .6);
+		dFastSpeed = config.getDouble("shooter.dSlowCarouselPower", .2);		
 		joyTestController = new Joystick( RobotMap.kUSBPort_TestJoyStick );
 		gamepadDriver  = new XboxController(RobotMap.kUSBPort_DriverControl );
     	gamepadOperator = new XboxController(RobotMap.kUSBPort_OperatorControl );
@@ -209,25 +211,34 @@ public class Inputs {
 				bCloseTargets = true;
 				bFarTargets = false;
 
-				bFastCarousel = true;
-				bSlowCarousel = false;
+				bSpeed = true;
 				
 			} 
 			else if(gamepadOperator.getPOV() == 180)
 			{
-				bFastCarousel = false;
-				bSlowCarousel = true;
+				bSpeed = false;
 
 				bCloseTargets = false;
 				bFarTargets = true;
 			}
 		}
 
-		if(gamepadOperator.getBButtonPressed())
-		{ 
-			
-			dDanielsMouthPower = dDanielsMouthPower + .05;
+		if (gamepadOperator.getBButton()){
+
+			if (bSpeed == true) {//Fast
+
+				dRequestedCarouselPower = dFastSpeed;
+				System.out.println("I works");
+
+			} else { //Slow
+
+				dRequestedCarouselPower = dSlowSpeed;
+				System.out.println("Maybe?");
+
+			}
+
 		}
+
 		if(gamepadOperator.getYButton())
 		{
 			dIntakePower = 0.5; 
@@ -345,8 +356,7 @@ public class Inputs {
 															 *        -0.5        0.5             0.25         250            
 															 *         0.0        1.0              .5          500            
 															 *         0.5        1.5              .75         750            
-															 *up       1.0        2.0             1.0         1000            
-															 */
+															 *up       1.0        2.0             1.0         1000     								 */
 	}
     
 	public double convertJoystickAxisToValueRange( double d_InputValue, double d_MaxValue )  {
@@ -386,8 +396,6 @@ public class Inputs {
 		SmartDashboard.putNumber("I Gyro Req Bear",dRequestedBearing);
 		SmartDashboard.putBoolean("I Close Targets",bCloseTargets);
 		SmartDashboard.putBoolean("I Far Targets",bFarTargets);
-		SmartDashboard.putBoolean("I Fast Carousel",bFastCarousel);
-		SmartDashboard.putBoolean("I Slow Carousel",bSlowCarousel);
 		SmartDashboard.putNumber("I Req Veloc",dRequestedVelocity);
 		SmartDashboard.putNumber("I Req Camear Pos",dRequestedCameraPosition);
 		SmartDashboard.putNumber("I Count Daniels", iDanielCounts);
@@ -402,7 +410,7 @@ public class Inputs {
 	
 	public void loadConfig(Config config)  {
 
-		dMaxWinchPower = config.getDouble("inputs.dMaxWinchPower", .65);
+		
 
         //bp_FastOperation = config.getBoolean("b_FastOperation", true);	// ****  we do not zero this **** 
 //		b_IsTestMode = Preferences.getInstance().getBoolean("I_IsTestMode", false);

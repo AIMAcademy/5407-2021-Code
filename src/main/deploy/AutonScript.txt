@@ -2,7 +2,7 @@ auton 1  test turning
     step 1		Move straight
         Bearing   0     gyro on 0 for 120000
         distance  120000  tttt  
-        Power       1.0 tttt 
+        Power       0.5 tttt 
 
     step 2		Wait for .5
 	settle  .5 settle
@@ -10,7 +10,7 @@ auton 1  test turning
     step 3		gyro on 0 reverse for same
         Bearing   0     keep on 90 degrees left
         distance  120000  tttt  
-        Power       -1.0 tttt 
+        Power       -0.5 tttt 
 
 
 auton 2	test turning and driving
@@ -70,3 +70,14 @@ auton 4 test shooting
 
     step 4
         shoot   0  	press the shoot button  0 required but ignored
+
+auton 5 test Code
+    step 1 
+        bearing 0 
+        distance 12000
+        power .5
+    step 2
+        turnto 90
+    step 3
+        turnto 0
+    

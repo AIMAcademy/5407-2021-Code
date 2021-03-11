@@ -7,6 +7,7 @@ import frc.robot.Limelight.LightMode;
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Servo;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Spark;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
@@ -51,6 +52,7 @@ public class Shooter {
 	Spark motPWMEPCCarousel = null;
 	double dFastCarouselPower = 0.7;
 	double dSlowCarouselPower = 0.2;
+	Solenoid solArming;
 
 	Spark motPWMEPCLifter = null;
 
@@ -65,10 +67,10 @@ public class Shooter {
 	Spark    motShooterHood = null;
 	AnalogInput anaShooterHood = null;
 	public static final double kShooterHood_Stop = .5; 
-	double dShooterHoodPower = .5;
+	double dShooterHoodPower = .2;
 	int iShooterHood = 0;
-	int iShooterHoodTop = 3240;
-	int iShooterHoodBottom = 2850;
+	int iShooterHoodTop = 525;
+	int iShooterHoodBottom = 1470;
 	int iShooterHoodPosition = 0;
 	String sHoodStatus = "---";
 	int iDiff = 0;
@@ -76,6 +78,7 @@ public class Shooter {
 
 	double dEPCLifterPower = 0.0;
 	double dEPCLifterSpeed = 0.0;
+	boolean bShooting = false;
 
 	String sCameraStatus = "";
 	double dCamera_TopStop = .401;
@@ -87,6 +90,7 @@ public class Shooter {
 	double dCamera_EPCView = .732;
 	double dCamera_DefaultPosition = dCamera_Store; 
 	LightMode mCameraLEDMode = LightMode.eOff;
+	public double dShooterLocation;
 
 
 
@@ -141,7 +145,8 @@ public class Shooter {
 		motCANShooterMotorLeft.configFactoryDefault();
 		motCANShooterMotorLeft.set(ControlMode.PercentOutput, 0.0);
 
-
+		solArming = new Solenoid(RobotMap.kCANId_PCM, RobotMap.kPCMPort_Arming);
+;
 		svoCamera = new Servo(RobotMap.kPWMPort_CameraServo);
 		//dCamera_DefaultPosition = dCamera_FarTargets; 
 		dCameraPosition = dCamera_DefaultPosition;
@@ -346,6 +351,9 @@ public class Shooter {
 
 		dEPCLifterPower = 0.0;
 		bShooterOnTarget = false;
+		bShooting = false;
+		System.out.println(anaShooterHood.getAverageValue());
+
 
 		
 		//if (digEPCInTheWay.get() == false) {	//Device is set for normally closed, false if good circuit and no EPC
@@ -396,9 +404,9 @@ public class Shooter {
 
 		motPWMEPCCarousel.set(inputs.dRequestedCarouselPower);
 		motPWMEPCLifter.set( dEPCLifterPower );			   	//Start wheel to push balls up
-
+		solArming.set(bShooting);
 			// read the sensors so we all have them now
-			//iShooterHoodPosition = anaShooterHood.getAverageValue();
+		iShooterHoodPosition = anaShooterHood.getAverageValue();
 
 		return;
 
@@ -473,6 +481,13 @@ public class Shooter {
 		motCANShooterMotorRight.config_kD(kPIDLoopIdx, dPid_Derivative, kTimeoutMs);
 		motCANShooterMotorRight.config_kF(kPIDLoopIdx, dPid_FeedForward, kTimeoutMs);
 		motCANShooterMotorRight.config_IntegralZone(kPIDLoopIdx, iPid_IntegralZone);
+	}
+
+
+	public void updateShooterLocation() {
+
+		
+
 	}
 
 	public void updateShooterVelocity(Inputs inputs) {
@@ -550,8 +565,8 @@ public class Shooter {
 		motShooterHood.set(inputs.dShooterHoodPower);
 
 
-		/**
-		inputs.iHoodRequestedPower = iShooterHoodBottom + 40;
+		
+		// inputs.iHoodRequestedPower = iShooterHoodBottom + 40;
 
 		if( Math.abs(inputs.dHoodPower) < .2 ){					// dead band to prevent accidental hits
 			inputs.dHoodPower = 0.0;
@@ -592,7 +607,7 @@ public class Shooter {
 			sHoodStatus = "Full Down";
 			inputs.dHoodPower = 0.0;
 		}
-		**/
+		
 
 
 	}
@@ -774,6 +789,7 @@ class FireSequence2{
 			case 2:
 				sState = "Spin EPCLifter";
 				//shooter.LoadABall(); // pull in the next ball
+				shooter.bShooting = true;
 				shooter.dEPCLifterPower = shooter.dEPCLifterSpeed;   	//Start wheel to push balls up
 				if(timStepTimer.get() > this.dClearEPCTime){			// we see a ball
 					iNextStep = iStep + 1;							
@@ -784,6 +800,7 @@ class FireSequence2{
 			case 3:
 				sState = "Spin Carousel";
 				shooter.dEPCLifterPower = shooter.dEPCLifterSpeed;   	//Start wheel to push balls up
+				shooter.bShooting = true;
 				if( inputs.bCloseTargets == true){
 					inputs.dRequestedCarouselPower = shooter.dFastCarouselPower;
 				} else if( inputs.bFarTargets == true ){
