@@ -408,17 +408,15 @@ public class Shooter {
 			// read the sensors so we all have them now
 		iShooterHoodPosition = anaShooterHood.getAverageValue();
 
-		return;
+		HoodPosition(inputs);
 
-		//HoodPosition(inputs);
-
-		//if (digEPCInTheWay.get() == false) {	//Device is set for normally closed
-		//	bEPCInTheWay = false;   			//We have a connection so it's set to false
-		//}else {
-		//	bEPCInTheWay = true;				//Indicates open circut, means EPC in th way
-		//}
+		if (digEPCInTheWay.get() == false) {	//Device is set for normally closed
+			bEPCInTheWay = false;   			//We have a connection so it's set to false
+		}else {
+			bEPCInTheWay = true;				//Indicates open circut, means EPC in th way
+		}
 		
-		//if( inputs.bIntakeIn == true)
+		// if( inputs.bIntakeIn == true)
 		//	LoadABall();
 			
 
