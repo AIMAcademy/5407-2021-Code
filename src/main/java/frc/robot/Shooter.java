@@ -808,14 +808,14 @@ class FireSequence2{
 				}
 
 				if( inputs.bCloseTargets == true){
-					if( timStepTimer.get() > 1.5 ){
+					if( timStepTimer.get() > 3.0 ){
 						this.iNextStep = this.iStep +1;  
 					} else {
 						if( shooter.bEPCInTheWay == true) { // if we see a ball
 							timStepTimer.reset();
 						}			
 
-						if( timStepTimer.get() > 3.0 ){
+						if( timStepTimer.get() > 6.0 ){
 							this.iNextStep = this.iStep +1;  
 						}
 					}
