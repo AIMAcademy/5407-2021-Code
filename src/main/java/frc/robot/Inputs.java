@@ -34,7 +34,7 @@ public class Inputs {
 	//}
 	public double dDanielsMouthPower = 0.0; 
 	private int iDanielCounts = 0;
-	public double dIntakePower = 0.0; 
+	public double dIntakePower = 0.0;
 
 	public double dDriverPower = 0.0;
 	public double dLeftWinchPower = 0.0;
@@ -59,6 +59,9 @@ public class Inputs {
 	public boolean bTeainatorUp = false;
 	public boolean bTeainatorDown = false;
 
+	//Piston Motors
+	public double hLeftMotor = 0; 
+	public double hRightMotor = 0; 
 	//public boolean bUpdateShooterPID = false;
 
 	// valuse used in the base
@@ -202,6 +205,19 @@ public class Inputs {
 			{
 				dRightWinchPower = -dMaxWinchPower;
 				dLeftWinchPower = -dMaxWinchPower;
+			}
+			
+			if(gamepadOperator.getPOV() == 90) {
+				hLeftMotor = 0.5;  
+				hRightMotor = 0.5;
+			}
+			else if(gamepadOperator.getPoV() == 270) { 
+				hLeftMotor = -0.5; 
+				hRightMotor = -0.5; 
+			}
+			else {
+				hRightMotor= 0;
+				hLeftMotor =0;
 			}
 		} 
 		else 
@@ -406,7 +422,6 @@ public class Inputs {
 		
 	}
 
-
 	
 	public void loadConfig(Config config)  {
 
@@ -417,8 +432,6 @@ public class Inputs {
 		//b_CameraTestMode = Preferences.getInstance().getBoolean("I_CameraTestMode", false);
 	
 	}
-
-
 	
 
     public void zeroInputs() {					// reset all variables to stop or off state
